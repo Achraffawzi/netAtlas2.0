@@ -1,0 +1,113 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent;
+
+    @media(max-width: 767px) {
+        padding: 0 20px;
+    }
+
+    &__container {
+        padding: 20px 0;
+        @include flex(row, flex-start, center);
+
+        @media(max-width: 767px) {
+            @include flex(row, space-between, center);
+        }
+    }
+    
+    &__logo {
+        width: 130px;
+        object-fit: contain;
+        margin-right: 100px;
+    }
+
+    &__navbar {
+        @include flex(row, flex-start, center);
+        flex: 1;
+
+        @media(max-width: 767px) {
+            display: none;
+        }
+
+        .header__link {
+            padding: 5px 15px;
+            margin: 0 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: $blackColor;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: -o-max-content;
+            width: max-content;
+            // display: inline-block;
+
+            &:hover {
+                color: $orangeColor;
+            }
+            
+        }
+
+        .header__link:nth-of-type(4) {
+            margin-left: auto;
+            background-color: $orangeColor;
+            color: #fff;
+            
+            &:hover {
+                background-color: darken($orangeColor, 2%);
+            }
+        }
+    }
+
+    .toggler {
+        display: none;
+        font-size: 22px;
+        color: $purpleColor;
+
+        @media(max-width: 767px) {
+            display: block;
+        }
+    }
+}
+
+/* changing the position of the header components on scroll */
+.scrollContainer {
+    @include flex(row, space-between, center);
+}
+.scrollHeader {
+    background-color: #fff;
+    box-shadow: 0 3px 1rem rgba(0, 0, 0, .1);
+    height: 80px;
+    transition: background-color .3s linear;
+}
+
+.flexZero {
+    flex: 0;
+}
+
+/* Styling the backup navbar */
+.backupNavbar {
+    background-color: rgba(255, 255, 255, .8);
+    overflow: hidden;
+    @include flex(column, center, center);
+    padding: 10px 0;
+    transition: transform .6s linear;
+    transform: translateY(-100vh);
+    @include prefixers(box-shadow, 0px 3px 10px -1px rgba(0,0,0,0.58), webkit moz o);
+
+    a {
+        color: $purpleColor;
+        
+        &:not(:last-of-type) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &.active {
+        transform: translateY(0);
+    }
+}

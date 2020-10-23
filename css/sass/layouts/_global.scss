@@ -1,0 +1,31 @@
+* {
+    @include prefixers(box-sizing, border-box, webkit moz o);
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background-color: $orangeColor;
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+p, span {
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    color: $blackColor;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+i {
+    cursor: pointer;
+}
