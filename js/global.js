@@ -5,9 +5,9 @@ const contactLink = document.querySelector('.cl');
 const navbar = document.querySelector('.header__navbar');
 window.addEventListener('scroll', () => {
 
-    headerContainer.classList.toggle('scrollContainer', document.body.scrollTop > 80 || document.documentElement.scrollTop > 80);
-    navbar.classList.toggle('flexZero', document.body.scrollTop > 80 || document.documentElement.scrollTop > 80);
-    header.classList.toggle('scrollHeader', document.body.scrollTop > 80 || document.documentElement.scrollTop > 80);
+    headerContainer.classList.toggle('scrollContainer', document.body.scrollTop > 10 || document.documentElement.scrollTop > 10);
+    navbar.classList.toggle('flexZero', document.body.scrollTop > 10 || document.documentElement.scrollTop > 10);
+    header.classList.toggle('scrollHeader', document.body.scrollTop > 10 || document.documentElement.scrollTop > 10);
 
 });
 
